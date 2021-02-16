@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Better Alipay Go',
-  tagline: 'The tagline of my site',
+  tagline: '',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -17,12 +17,12 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
-        },
+        // {
+        //   to: '/',
+        //   activeBasePath: 'docs',
+        //   label: 'Docs',
+        //   position: 'left',
+        // },
         // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/WenyXu/better-alipay-go/',
@@ -78,7 +78,7 @@ module.exports = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} WenyXu, Inc. Built with Docusaurus.`,
     },
   },
   presets: [
