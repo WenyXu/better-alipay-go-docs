@@ -72,7 +72,6 @@ func main(){
         // 创建客户端使用 New / Default 方法
 		s := alipay.Default(
 			...,
-		    CustomOption
         )
         //调用 Request of MakeParam func 
         s.Request("alipay.trade.create",m.NewMap(func(param m.M) {
@@ -91,7 +90,8 @@ func main(){
     
     
 ```
-Use a client without default app configuration and configure per request.
+使用一个没有默认配置的 Client ，在每一个请求中配置支付宝配置信息
+
 ```go
 package main
 import (
@@ -102,10 +102,9 @@ import (
 )
 
 func main(){
-	// init a empty client 
+	// 初始化一个客户端，没有任何默认支付宝配置
     s := alipay.Default()
     
-    // of course, you can using a struct instead
     // var resp AlipayTradeCreateResponse
     resp := make(map[string]interface{})
 	s.Request("alipay.trade.create",m.NewMap(func(param m.M) {
@@ -116,7 +115,7 @@ func main(){
 			Set("total_amount", "88.88")
 	    }),
 	    &resp,
-	    // dynamic configuration pre Request func
+	    // 动态配置
 	    options.AppId(os.Getenv("APP_ID")),
 	    options.PrivateKey(os.Getenv("PrivateKey")),
 	    options.AppCertPath("./cert_file/appCertPublicKey.crt"),
