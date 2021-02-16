@@ -19,16 +19,14 @@ Default(opts ...options.Option) Service
 client := alipay.Default()
 
 // same as 
-c2 := alipay.New(append(
-				[]Option{},
-				DefaultLocation,
+c2 := alipay.New(DefaultLocation,
 				DefaultCharset(),
 				DefaultFormat(),
 				DefaultVersion(),
 				SetAfterFunc(DefaultAfterFunc),
 				SetBeforeFunc(DefaultBeforeFunc),
 				SetLogger(DefaultLogger),
-        ))
+            ))
 
 //...
 ```
